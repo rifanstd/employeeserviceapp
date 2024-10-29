@@ -3,7 +3,9 @@ import 'package:employeeserviceapp/core/configs/assets/app_icons.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_colors.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_text_style.dart';
 import 'package:employeeserviceapp/presentation/leave/pages/leave.dart';
+import 'package:employeeserviceapp/presentation/personal_service/widgets/basic_feature_card.dart';
 import 'package:employeeserviceapp/presentation/personal_service/widgets/leave_summary_card.dart';
+import 'package:employeeserviceapp/presentation/splash/pages/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -39,9 +41,12 @@ class PersonalServicePage extends StatelessWidget {
               SizedBox(width: 16.w),
               GestureDetector(
                 onTap: () {},
-                child: const Icon(
-                  Icons.notifications_rounded,
-                  color: AppColors.iconWhite,
+                child: const Badge(
+                  backgroundColor: AppColors.danger500,
+                  child: Icon(
+                    Icons.notifications_rounded,
+                    color: AppColors.iconWhite,
+                  ),
                 ),
               ),
               SizedBox(width: 16.w),
@@ -77,38 +82,11 @@ class PersonalServicePage extends StatelessWidget {
                       style: AppTextStyle.heading5Bold.copyWith(color: AppColors.textDark),
                     ),
                     SizedBox(height: 16.h),
-                    LayoutBuilder(builder: (context, constraints) {
-                      return GestureDetector(
+                    BasicFeatureCard(
+                        title: 'Leave',
                         onTap: () {
                           AppNavigator.push(context, const InformationLeavePage());
-                        },
-                        child: Container(
-                          width: (constraints.maxWidth * 0.5 - 16).w,
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: AppColors.backgroundWhite,
-                            borderRadius: BorderRadius.circular(10).r,
-                            border: Border.all(color: AppColors.strokeTeritary, width: 1.w),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SvgPicture.asset(
-                                AppIcons.date,
-                                width: 24.w,
-                              ),
-                              SizedBox(width: 16.w),
-                              Text(
-                                "Leave",
-                                style: AppTextStyle.heading6Medium.copyWith(color: AppColors.textDark),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    }),
+                        }),
                     SizedBox(height: 16.h),
                     Text(
                       "Transaction",
@@ -131,6 +109,18 @@ class PersonalServicePage extends StatelessWidget {
                         _buildTransactionItem("Lembur", AppIcons.document),
                         _buildTransactionItem("Service Center", AppIcons.question),
                       ],
+                    ),
+                    SizedBox(height: 16.h),
+                    Text(
+                      "Other Features",
+                      style: AppTextStyle.heading8Medium.copyWith(color: AppColors.textLightDark),
+                    ),
+                    SizedBox(height: 8.h),
+                    BasicFeatureCard(
+                      title: 'Movies',
+                      onTap: () {
+                        AppNavigator.push(context, const SplashPage());
+                      },
                     ),
                   ],
                 ),

@@ -7,7 +7,7 @@ class AppTheme {
   AppTheme._();
 
   static final lightTheme = ThemeData(
-    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary500),
+    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.info500),
     fontFamily: 'Poppins',
     useMaterial3: true,
     scaffoldBackgroundColor: AppColors.backgroundWhite,

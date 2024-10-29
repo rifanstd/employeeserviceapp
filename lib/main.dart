@@ -1,10 +1,13 @@
 import 'package:employeeserviceapp/core/configs/theme/app_theme.dart';
 import 'package:employeeserviceapp/presentation/personal_service/pages/personal_service.dart';
+import 'package:employeeserviceapp/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupServiceLocator();
   await ScreenUtil.ensureScreenSize();
   runApp(const MyApp());
 }
