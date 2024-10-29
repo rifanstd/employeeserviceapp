@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:employeeserviceapp/data/auth/models/signin_req_params.dart';
 import 'package:employeeserviceapp/data/auth/models/signup_req_params.dart';
-import 'package:employeeserviceapp/domain/auth/usecases/signin.dart';
-import 'package:employeeserviceapp/domain/auth/usecases/signup.dart';
+import 'package:employeeserviceapp/domain/auth/usecases/signin_usecase.dart';
+import 'package:employeeserviceapp/domain/auth/usecases/signup_usecase.dart';
 import 'package:employeeserviceapp/presentation/auth/bloc/auth_state.dart';
 import 'package:employeeserviceapp/service_locator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -4,7 +4,7 @@ import 'package:employeeserviceapp/common/widgets/information_badge.dart';
 import 'package:employeeserviceapp/core/configs/assets/app_icons.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_colors.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_text_style.dart';
-import 'package:employeeserviceapp/presentation/leave/pages/leave_activity.dart';
+import 'package:employeeserviceapp/presentation/leave/pages/leave_activity_page.dart';
 import 'package:employeeserviceapp/presentation/leave/widgets/additional_info_card.dart';
 import 'package:employeeserviceapp/presentation/leave/widgets/complex_info_card.dart';
 import 'package:flutter/material.dart';

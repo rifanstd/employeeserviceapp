@@ -1,4 +1,4 @@
-import 'package:employeeserviceapp/domain/auth/usecases/is_logged_in.dart';
+import 'package:employeeserviceapp/domain/auth/usecases/is_logged_in_usecase.dart';
 import 'package:employeeserviceapp/presentation/splash/bloc/splash_state.dart';
 import 'package:employeeserviceapp/service_locator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

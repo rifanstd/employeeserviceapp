@@ -1,7 +1,7 @@
 import 'package:employeeserviceapp/common/helper/navigation/app_navigation.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_colors.dart';
-import 'package:employeeserviceapp/presentation/auth/pages/signin.dart';
-import 'package:employeeserviceapp/presentation/personal_service/pages/personal_service.dart';
+import 'package:employeeserviceapp/presentation/auth/pages/signin_page.dart';
+import 'package:employeeserviceapp/presentation/home/pages/home_page.dart';
 import 'package:employeeserviceapp/presentation/splash/bloc/splash_cubit.dart';
 import 'package:employeeserviceapp/presentation/splash/bloc/splash_state.dart';
 import 'package:flutter/cupertino.dart';
@@ -24,7 +24,7 @@ class SplashPage extends StatelessWidget {
             }
 
             if (state is Authenticated) {
-              AppNavigator.pushReplacement(context, const PersonalServicePage());
+              AppNavigator.pushReplacement(context, const HomePage());
             }
           },
           child: Center(

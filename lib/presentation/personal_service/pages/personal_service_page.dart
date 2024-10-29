@@ -2,10 +2,10 @@ import 'package:employeeserviceapp/common/helper/navigation/app_navigation.dart'
 import 'package:employeeserviceapp/core/configs/assets/app_icons.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_colors.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_text_style.dart';
-import 'package:employeeserviceapp/presentation/leave/pages/leave.dart';
+import 'package:employeeserviceapp/presentation/home/pages/home_page.dart';
+import 'package:employeeserviceapp/presentation/leave/pages/leave_page.dart';
 import 'package:employeeserviceapp/presentation/personal_service/widgets/basic_feature_card.dart';
 import 'package:employeeserviceapp/presentation/personal_service/widgets/leave_summary_card.dart';
-import 'package:employeeserviceapp/presentation/splash/pages/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -119,7 +119,7 @@ class PersonalServicePage extends StatelessWidget {
                     BasicFeatureCard(
                       title: 'Movies',
                       onTap: () {
-                        AppNavigator.push(context, const SplashPage());
+                        AppNavigator.push(context, const HomePage());
                       },
                     ),
                   ],

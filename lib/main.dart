@@ -1,5 +1,5 @@
 import 'package:employeeserviceapp/core/configs/theme/app_theme.dart';
-import 'package:employeeserviceapp/presentation/personal_service/pages/personal_service.dart';
+import 'package:employeeserviceapp/presentation/personal_service/pages/personal_service_page.dart';
 import 'package:employeeserviceapp/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
