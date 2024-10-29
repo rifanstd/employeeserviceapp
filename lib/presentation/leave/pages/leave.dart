@@ -1,8 +1,10 @@
+import 'package:employeeserviceapp/common/helper/navigation/app_navigation.dart';
 import 'package:employeeserviceapp/common/widgets/custom_bottom_app_bar.dart';
 import 'package:employeeserviceapp/common/widgets/information_badge.dart';
 import 'package:employeeserviceapp/core/configs/assets/app_icons.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_colors.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_text_style.dart';
+import 'package:employeeserviceapp/presentation/leave/pages/leave_activity.dart';
 import 'package:employeeserviceapp/presentation/leave/widgets/additional_info_card.dart';
 import 'package:employeeserviceapp/presentation/leave/widgets/complex_info_card.dart';
 import 'package:flutter/material.dart';
@@ -137,8 +139,10 @@ class InformationLeavePage extends StatelessWidget {
             ),
           ),
           TBottomAppBar(
-            titlePositiveBtn: 'Buat Form Leave',
-            onPositiveClicked: () {},
+            positiveChild: const Text('Buat Form Leave'),
+            onPositiveClicked: () {
+              AppNavigator.push(context, const LeaveActivityPage());
+            },
           ),
         ],
       ),

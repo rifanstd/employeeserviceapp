@@ -27,3 +27,47 @@ class InformationBadge extends StatelessWidget {
     );
   }
 }
+
+class InformationBadgeWithIcon extends StatelessWidget {
+  final String message;
+  // final String iconPath;
+  final Color bgColor;
+  final Color fgColor;
+
+  const InformationBadgeWithIcon({
+    super.key,
+    required this.message,
+    required this.bgColor,
+    required this.fgColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(5).r,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(
+            Icons.info_rounded,
+            color: fgColor,
+            size: 16,
+          ),
+          SizedBox(width: 4.w),
+          Expanded(
+            child: Text(
+              message,
+              style: AppTextStyle.bodyRegular.copyWith(color: fgColor),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

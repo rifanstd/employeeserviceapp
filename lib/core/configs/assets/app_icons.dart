@@ -20,4 +20,6 @@ class AppIcons {
   static const wave4 = "${basePath}wave_4.svg";
   static const wave5 = "${basePath}wave_5.svg";
   static const wave6 = "${basePath}wave_6.svg";
+  static const successIlustration = "${basePath}success_ilustration.svg";
+  static const failedIlustration = "${basePath}failed_ilustration.svg";
 }

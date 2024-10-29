@@ -3,17 +3,17 @@ import 'package:employeeserviceapp/core/configs/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class TBottomAppBar extends StatelessWidget {
-  final String titlePositiveBtn;
-  final String? titleNegativeBtn;
+  final Widget positiveChild;
+  final Widget? negativeChild;
   final void Function() onPositiveClicked;
   final void Function()? onNegativeClicked;
 
   const TBottomAppBar({
     super.key,
-    required this.titlePositiveBtn,
     required this.onPositiveClicked,
-    this.titleNegativeBtn,
     this.onNegativeClicked,
+    required this.positiveChild,
+    this.negativeChild,
   });
 
   @override
@@ -35,20 +35,20 @@ class TBottomAppBar extends StatelessWidget {
         ),
         child: Row(
           children: [
-            if (titleNegativeBtn != null)
+            if (negativeChild != null)
               Expanded(
                 child: ElevatedButton(
                   onPressed: onNegativeClicked,
                   style: AppButtonStyle.filledAlt,
-                  child: Text(titleNegativeBtn!),
+                  child: negativeChild,
                 ),
               ),
-            if (titleNegativeBtn != null) const SizedBox(width: 16),
+            if (negativeChild != null) const SizedBox(width: 16),
             Expanded(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: onPositiveClicked,
                 style: AppButtonStyle.filledInfo,
-                child: const Text("Buat Form Leave"),
+                child: positiveChild,
               ),
             ),
           ],
