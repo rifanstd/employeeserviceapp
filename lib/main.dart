@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
       enableScaleWH: () => true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
+        title: 'Employee Service App - Rifan',
         themeMode: ThemeMode.light,
         theme: AppTheme.lightTheme,
         home: const PersonalServicePage(),

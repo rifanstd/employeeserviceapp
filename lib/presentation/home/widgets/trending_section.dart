@@ -48,7 +48,7 @@ class TrendingSection extends StatelessWidget {
                       ),
                     ),
                     child: CachedNetworkImage(
-                      imageUrl: TMDbImageHelper.getFullImageUrl(movies.elementAt(index).backdropPath),
+                      imageUrl: TMDbImageHelper.getFullImageUrl(movies.elementAt(index).posterPath),
                       imageBuilder: (context, imageProvider) => Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(

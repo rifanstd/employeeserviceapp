@@ -1,4 +1,5 @@
 import 'package:employeeserviceapp/common/helper/navigation/app_navigation.dart';
+import 'package:employeeserviceapp/common/widgets/confirmation_alert_dialog.dart';
 import 'package:employeeserviceapp/core/configs/assets/app_icons.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_colors.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_text_style.dart';
@@ -102,12 +103,12 @@ class PersonalServicePage extends StatelessWidget {
                         crossAxisSpacing: 8,
                       ),
                       children: [
-                        _buildTransactionItem("Probation", AppIcons.observation),
-                        _buildTransactionItem("Leave", AppIcons.date),
-                        _buildTransactionItem("Dinas", AppIcons.travel),
-                        _buildTransactionItem("Izin", AppIcons.form),
-                        _buildTransactionItem("Lembur", AppIcons.document),
-                        _buildTransactionItem("Service Center", AppIcons.question),
+                        _buildTransactionItem(context, "Probation", AppIcons.observation),
+                        _buildTransactionItem(context, "Leave", AppIcons.date),
+                        _buildTransactionItem(context, "Dinas", AppIcons.travel),
+                        _buildTransactionItem(context, "Izin", AppIcons.form),
+                        _buildTransactionItem(context, "Lembur", AppIcons.document),
+                        _buildTransactionItem(context, "Service Center", AppIcons.question),
                       ],
                     ),
                     SizedBox(height: 16.h),
@@ -132,22 +133,36 @@ class PersonalServicePage extends StatelessWidget {
     );
   }
 
-  Widget _buildTransactionItem(String title, String iconPath) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SvgPicture.asset(
-          iconPath,
-          width: 32.w,
-          height: 32.h,
-        ),
-        SizedBox(height: 4.h),
-        Text(
-          title,
-          textAlign: TextAlign.center,
-          style: AppTextStyle.smallRegular.copyWith(color: AppColors.textLightDark),
-        ),
-      ],
+  Widget _buildTransactionItem(BuildContext context, String title, String iconPath) {
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (context) => ConfirmationAlertDialog(
+              iconPath: AppIcons.failedIlustration,
+              title: 'Oops!',
+              text: 'Maaf fitur ini belum tersedia',
+              onConfirm: () {
+                AppNavigator.pop(context);
+              }),
+        );
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(
+            iconPath,
+            width: 32.w,
+            height: 32.h,
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: AppTextStyle.smallRegular.copyWith(color: AppColors.textLightDark),
+          ),
+        ],
+      ),
     );
   }
 }
