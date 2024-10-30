@@ -1,8 +1,5 @@
 class ApiUrl {
   static const baseUrl = "https://api.themoviedb.org/3/";
-  static const apiV = "api/v1/";
-  static const signUp = "${apiV}auth/signup";
-  static const signIn = "${apiV}auth/signin";
   static const trendingMovies = "trending/movie/day?language=en-US";
   static const trendingTV = "trending/tv/day?language=en-US";
   static const popularTV = "tv/popular?language=en-US&page=1";

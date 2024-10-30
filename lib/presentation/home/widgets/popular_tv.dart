@@ -1,5 +1,6 @@
 import 'package:employeeserviceapp/core/configs/theme/app_colors.dart';
 import 'package:employeeserviceapp/core/configs/theme/app_text_style.dart';
+import 'package:employeeserviceapp/core/constants/recommendation_type.dart';
 import 'package:employeeserviceapp/presentation/home/bloc/trending_cubit.dart';
 import 'package:employeeserviceapp/presentation/home/bloc/trending_state.dart';
 import 'package:employeeserviceapp/presentation/home/widgets/trending_section.dart';
@@ -20,7 +21,10 @@ class PopularTV extends StatelessWidget {
           }
 
           if (state is TrendingMoviesLoaded) {
-            return TrendingSection(movies: state.movies);
+            return TrendingSection(
+              movies: state.movies,
+              type: RecommendationType.tv,
+            );
           }
 
           if (state is TrendingMoviesFailedLoad) {
